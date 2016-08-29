@@ -271,6 +271,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Browse\Index.cshtml" />
     <Content Include="Views\Compare\Index.cshtml" />
+    <Content Include="Views\Shared\_AwfulInput.cshtml" />
+    <Content Include="Views\Shared\AwfulInputs\_AI_00000.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

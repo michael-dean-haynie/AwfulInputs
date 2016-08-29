@@ -1,0 +1,21 @@
+﻿@{ 
+    string formID = ViewBag.AIName + "-form";
+    string inputID = ViewBag.AIName + "-input";
+    string submitID = ViewBag.AIName + "-submit";
+    string outputID = ViewBag.AIName + "-output";
+}
+<form id="@formID" action="#" method="get">
+    <label for="@(inputID + "1")">Phone</label>
+    <input type="text" id="@(inputID + "1")" name="@(inputID + "1")" />
+    <input type="submit" id="@submitID"/>
+</form>
+<div id="@outputID">
+
+</div>
+<script type="text/javascript" name="submit-@formID">
+    $("#@formID").on("submit", function(event){
+        event.preventDefault();
+        $("#@outputID").empty();
+        $("#@outputID").append("<p>" + $("#@(inputID + "1")").val() + "</p>");
+    });
+</script>
