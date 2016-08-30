@@ -218,6 +218,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\ai.0.22.19-build00125.js" />
     <Content Include="Scripts\ai.0.22.19-build00125.min.js" />
+    <Content Include="Scripts\animateOutput.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -273,6 +274,7 @@
     <Content Include="Views\Compare\Index.cshtml" />
     <Content Include="Views\Shared\_AwfulInput.cshtml" />
     <Content Include="Views\Shared\AwfulInputs\_AI_00000.cshtml" />
+    <Content Include="Views\Shared\AwfulInputs\_AI_00001.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
