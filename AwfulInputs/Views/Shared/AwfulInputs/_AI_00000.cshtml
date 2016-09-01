@@ -6,8 +6,8 @@
 
 }
 <form id="@formID" action="#" method="get">
-    <label for="@(inputID + "1")">Phone</label>
-    <input type="text" id="@(inputID + "1")" name="@(inputID + "1")" />
+    <label for="@(inputID + "1")">Phone</label><br />
+    <input type="text" maxlength="20" id="@(inputID + "1")" name="@(inputID + "1")" />
     <input type="submit" id="@submitID" />
 </form>
 
@@ -16,6 +16,7 @@
         $("#@formID").on("submit", function(event){
             event.preventDefault();
             $("#@outputID").attr("data-output", $("#@(inputID + "1")").val());
+            formatOutputPhone("@outputID");
             animateOutput("@outputID");
         });
     });
