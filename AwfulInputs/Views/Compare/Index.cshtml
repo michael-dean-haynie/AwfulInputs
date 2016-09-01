@@ -10,17 +10,19 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12 col-md-6">
-            <div class="AIContainer well">
+            <div class="AIContainer">
                 @Html.Partial("_AwfulInput")
-                @{
-                    ViewBag.AIName = "_AI_00001";
-                }
             </div>
+            <div id="@(ViewBag.AIName + "-output")" class="AIContainer_output" data-is-visible="false"></div>
+            @{
+                ViewBag.AIName = "_AI_00001";
+            }
         </div>
         <div class="col-xs-12 col-md-6">
-            <div class="AIContainer well">
+            <div class="AIContainer">
                 @Html.Partial("_AwfulInput")
             </div>
+            <div id="@(ViewBag.AIName + "-output")" class="AIContainer_output" data-is-visible="false"></div>
         </div>
     </div>
 </div>

@@ -1,6 +1,4 @@
 ﻿@{ 
     string PartialName = "AwfulInputs/" + ViewBag.AIName;
-    ViewBag.outputID = ViewBag.AIName + "-output";
 }
 @Html.Partial(PartialName)
-<div id="@ViewBag.outputID" class="test" data-is-visible="false"></div>
