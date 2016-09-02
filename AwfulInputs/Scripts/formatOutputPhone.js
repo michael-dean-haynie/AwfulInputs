@@ -17,10 +17,10 @@
     // Replace "data-output" attribute with formatted output or error message
     if (errMsg != "") {
         $("#" + outputID).attr("data-output", errMsg);
-        element.attr("data-format-status", "success");
+        element.attr("data-format-status", "error");
     } else {
         $("#" + outputID).attr("data-output", output);
-        element.attr("data-format-status", "error");
+        element.attr("data-format-status", "success");
 
     }
 }
