@@ -14,10 +14,10 @@
             if (i == 4){<span class="bold">&#41;</span>}
             if (i == 7){<span class="bold">&#45;</span>}
 
-            <input type="text" maxlength="1" id="@(inputID + i)"/>
+            <input type="text" maxlength="1" value="0" id="@(inputID + i)"/>
         }
     </span>
-    <input type="submit" id="@submitID" />
+    <input type="submit" id="@submitID" class="btn btn-default" value="Submit" />
 </form>
 
 <!-- submit the form -->
@@ -29,7 +29,6 @@
             for (var i = 1; i <= 10; i++) {
                 inputs += $("#@inputID" + i).val();
             }
-            console.log(inputs);
             $("#@outputID").attr("data-output", inputs);
             formatOutputPhone("@outputID");
             animateOutput("@outputID");
@@ -40,7 +39,7 @@
 <style>
     #@formID input[type = "text"]
     {
-        width:2em;
+        width:1.5em;
     }
 </style>
 

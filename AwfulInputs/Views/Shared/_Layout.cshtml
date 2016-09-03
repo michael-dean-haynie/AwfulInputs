@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Awful Inputs</title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Scripts/jquery-ui-spinner/jquery-ui.css")
+
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/Scripts/animateOutput.js")
     @Scripts.Render("~/Scripts/formatOutputPhone.js")
+    @Scripts.Render("~/Scripts/jquery-ui-spinner/jquery-ui.js")
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -33,11 +36,13 @@
     <div class="container body-content">
         @RenderBody()
         @*@<hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>*@
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>*@
     </div>
-
+    <script>
+        $('.jq_ui_spinner').spinner();
+    </script>
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>

@@ -10,18 +10,14 @@
     <span class="no-wrap-container">
         @for (var i = 1; i <= 10; i++)
         {
-            if (i == 1) {<span class="bold">&#40;</span>}
-            if (i == 4) {<span class="bold">&#41;</span>}
-            if (i == 7) {<span class="bold">&#45;</span>}
-            <select id="@(inputID + i)" name="@(inputID + i)">
-                @for (var e = 0; e < 10; e++)
-                {
-                  <option value="@e" if (e == 1) {&#40;}>@e</option>
-                }
-            </select>
+            if (i == 1){<span class="bold">&#40;</span>}
+            if (i == 4){<span class="bold">&#41;</span>}
+            if (i == 7){<span class="bold">&#45;</span>}
+
+            <input class="jq_ui_spinner" min="0" max="9" onkeydown="return false;"  value="0" id="@(inputID + i)" />
         }
     </span>
-    <input type="submit" id="@submitID" class="btn btn-default" value="Submit" />
+    <input type="submit" id="@submitID" class="btn btn-default" value="Submit"/>
 </form>
 
 <!-- submit the form -->
@@ -41,12 +37,19 @@
 </script>
 
 <style>
-    select.squish {
-        /*max-width:5%;*/
+    .ui-spinner {
+        width:2.35em;
     }
+    .ui-spinner-input {
+	    margin-left: .2em;
+        width:.75em;
+    }
+    .ui-spinner-button {
+        width:1em;
+}
 </style>
 
 @*
     ===== AI Notes =====
-    - Individual digit drop downs
+    - Individual number inputs
 *@
