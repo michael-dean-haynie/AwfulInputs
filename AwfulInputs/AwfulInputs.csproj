@@ -278,6 +278,7 @@
     <Content Include="Views\Shared\AwfulInputs\_AI_00001.cshtml" />
     <Content Include="Views\Shared\AwfulInputs\_AI_00002.cshtml" />
     <Content Include="Views\Shared\AwfulInputs\_AI_00003.cshtml" />
+    <Content Include="Views\Shared\AwfulInputs\_AI_00004.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

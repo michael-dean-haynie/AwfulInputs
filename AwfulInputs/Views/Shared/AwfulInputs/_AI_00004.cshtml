@@ -1,0 +1,35 @@
+﻿@{
+    string formID = ViewBag.AIName + "-form";
+    string inputID = ViewBag.AIName + "-input";
+    string submitID = ViewBag.AIName + "-submit";
+    string outputID = ViewBag.AIName + "-output";
+
+}
+<form id="@formID" action="#" method="get">
+    <label for="@(inputID + "1")">Phone</label><br />
+    <input class="jq_ui_spinner" min="0" max="9999999999" onkeydown="return false;" value="0000000000" id="@(inputID + "1")" />
+    <input type="submit" id="@submitID" class="btn btn-default" value="Submit" />
+</form>
+
+<!-- submit the form -->
+<script type="text/javascript" name="submit-@formID">
+    $(document).ready(function () {
+        $("#@formID").on("submit", function(event){
+            event.preventDefault();
+            $("#@outputID").attr("data-output", $("#@(inputID + "1")").val());
+            formatOutputPhone("@outputID");
+            animateOutput("@outputID");
+        });
+    });
+</script>
+
+<style>
+    #@formID .ui-spinner {
+        width:12em;
+    }
+</style>
+
+@*
+    ===== AI Notes =====
+    - Single number input
+*@
