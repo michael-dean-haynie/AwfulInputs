@@ -1,0 +1,1 @@
+DROP DATABASE [dev_awful_inputs];
