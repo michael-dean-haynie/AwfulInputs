@@ -14,10 +14,10 @@
             if (i == 4){<span class="bold">&#41;</span>}
             if (i == 7){<span class="bold">&#45;</span>}
 
-            <input class="jq_ui_spinner" min="0" max="9" onkeydown="return false;"  value="0" id="@(inputID + i)" />
+            <input type="text" maxlength="1" value="0" id="@(inputID + i)"/>
         }
     </span>
-    <input type="submit" id="@submitID" class="btn btn-default" value="Submit"/>
+    <input type="submit" id="@submitID" class="btn btn-default" value="Submit" />
 </form>
 
 <!-- submit the form -->
@@ -37,19 +37,13 @@
 </script>
 
 <style>
-    #@formID .ui-spinner {
-        width:2.35em;
+    #@formID input[type = "text"]
+    {
+        width:1.5em;
     }
-    #@formID .ui-spinner-input {
-	    margin-left: .2em;
-        width:.75em;
-    }
-    #@formID .ui-spinner-button {
-        width:1em;
-}
 </style>
 
 @*
     ===== AI Notes =====
-    - Individual number inputs
+    - Individual text inputs
 *@

@@ -200,6 +200,7 @@
     <Compile Include="Controllers\CompareController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MigrationController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -212,6 +213,10 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Database\create-schema.sql" />
+    <Content Include="Database\create-tables.sql" />
+    <Content Include="Database\drop-schema.sql" />
+    <Content Include="Database\populate-tables.sql" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -223,6 +228,9 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConnectionStrings.config">
+      <SubType>Designer</SubType>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\formatOutputPhone.js" />
@@ -237,7 +245,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -274,11 +284,12 @@
     <Content Include="Views\Browse\Index.cshtml" />
     <Content Include="Views\Compare\Index.cshtml" />
     <Content Include="Views\Shared\_AwfulInput.cshtml" />
-    <Content Include="Views\Shared\AwfulInputs\_AI_00000.cshtml" />
     <Content Include="Views\Shared\AwfulInputs\_AI_00001.cshtml" />
     <Content Include="Views\Shared\AwfulInputs\_AI_00002.cshtml" />
     <Content Include="Views\Shared\AwfulInputs\_AI_00003.cshtml" />
     <Content Include="Views\Shared\AwfulInputs\_AI_00004.cshtml" />
+    <Content Include="Views\Shared\AwfulInputs\_AI_00005.cshtml" />
+    <Content Include="Views\Migration\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

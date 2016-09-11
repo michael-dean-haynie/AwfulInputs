@@ -7,8 +7,17 @@
 }
 <form id="@formID" action="#" method="get">
     <label for="@(inputID + "1")">Phone</label><br />
-    <input class="jq_ui_spinner" min="0" max="9999999999" onkeydown="return false;" value="0000000000" id="@(inputID + "1")" />
-    <input type="submit" id="@submitID" class="btn btn-default" value="Submit" />
+    <span class="no-wrap-container">
+        @for (var i = 1; i <= 10; i++)
+        {
+            if (i == 1){<span class="bold">&#40;</span>}
+            if (i == 4){<span class="bold">&#41;</span>}
+            if (i == 7){<span class="bold">&#45;</span>}
+
+            <input class="jq_ui_spinner" min="0" max="9" onkeydown="return false;"  value="0" id="@(inputID + i)" />
+        }
+    </span>
+    <input type="submit" id="@submitID" class="btn btn-default" value="Submit"/>
 </form>
 
 <!-- submit the form -->
@@ -16,7 +25,11 @@
     $(document).ready(function () {
         $("#@formID").on("submit", function(event){
             event.preventDefault();
-            $("#@outputID").attr("data-output", $("#@(inputID + "1")").val());
+            var inputs = "";
+            for (var i = 1; i <= 10; i++) {
+                inputs += $("#@inputID" + i).val();
+            }
+            $("#@outputID").attr("data-output", inputs);
             formatOutputPhone("@outputID");
             animateOutput("@outputID");
         });
@@ -25,11 +38,18 @@
 
 <style>
     #@formID .ui-spinner {
-        width:12em;
+        width:2.35em;
     }
+    #@formID .ui-spinner-input {
+	    margin-left: .2em;
+        width:.75em;
+    }
+    #@formID .ui-spinner-button {
+        width:1em;
+}
 </style>
 
 @*
     ===== AI Notes =====
-    - Single number input
+    - Individual number inputs
 *@

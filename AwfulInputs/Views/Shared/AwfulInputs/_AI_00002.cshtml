@@ -10,11 +10,15 @@
     <span class="no-wrap-container">
         @for (var i = 1; i <= 10; i++)
         {
-            if (i == 1){<span class="bold">&#40;</span>}
-            if (i == 4){<span class="bold">&#41;</span>}
-            if (i == 7){<span class="bold">&#45;</span>}
-
-            <input type="text" maxlength="1" value="0" id="@(inputID + i)"/>
+            if (i == 1) {<span class="bold">&#40;</span>}
+            if (i == 4) {<span class="bold">&#41;</span>}
+            if (i == 7) {<span class="bold">&#45;</span>}
+            <select id="@(inputID + i)" name="@(inputID + i)">
+                @for (var e = 0; e < 10; e++)
+                {
+                  <option value="@e" if (e == 1) {&#40;}>@e</option>
+                }
+            </select>
         }
     </span>
     <input type="submit" id="@submitID" class="btn btn-default" value="Submit" />
@@ -37,13 +41,12 @@
 </script>
 
 <style>
-    #@formID input[type = "text"]
-    {
-        width:1.5em;
+    select.squish {
+        /*max-width:5%;*/
     }
 </style>
 
 @*
     ===== AI Notes =====
-    - Individual text inputs
+    - Individual digit drop downs
 *@

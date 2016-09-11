@@ -7,21 +7,8 @@
 }
 <form id="@formID" action="#" method="get">
     <label for="@(inputID + "1")">Phone</label><br />
-    <span class="no-wrap-container">
-        @for (var i = 1; i <= 10; i++)
-        {
-            if (i == 1) {<span class="bold">&#40;</span>}
-            if (i == 4) {<span class="bold">&#41;</span>}
-            if (i == 7) {<span class="bold">&#45;</span>}
-            <select id="@(inputID + i)" name="@(inputID + i)">
-                @for (var e = 0; e < 10; e++)
-                {
-                  <option value="@e" if (e == 1) {&#40;}>@e</option>
-                }
-            </select>
-        }
-    </span>
-    <input type="submit" id="@submitID" class="btn btn-default" value="Submit" />
+    <input type="text" maxlength="20" id="@(inputID + "1")" name="@(inputID + "1")"/>
+    <input type="submit" id="@submitID" class="btn btn-default" value="Submit"/>
 </form>
 
 <!-- submit the form -->
@@ -29,11 +16,7 @@
     $(document).ready(function () {
         $("#@formID").on("submit", function(event){
             event.preventDefault();
-            var inputs = "";
-            for (var i = 1; i <= 10; i++) {
-                inputs += $("#@inputID" + i).val();
-            }
-            $("#@outputID").attr("data-output", inputs);
+            $("#@outputID").attr("data-output", $("#@(inputID + "1")").val());
             formatOutputPhone("@outputID");
             animateOutput("@outputID");
         });
@@ -41,12 +24,10 @@
 </script>
 
 <style>
-    select.squish {
-        /*max-width:5%;*/
-    }
+    
 </style>
 
 @*
     ===== AI Notes =====
-    - Individual digit drop downs
+    - Just a simple text input
 *@
