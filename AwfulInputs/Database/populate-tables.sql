@@ -1,5 +1,13 @@
 USE [AwfulInputs];
 
+INSERT INTO [AwfulInput] ([ViewName])
+VALUES
+	('_AI_00001'),
+	('_AI_00002'),
+	('_AI_00003'),
+	('_AI_00004'),
+	('_AI_00005')
+
 INSERT INTO [CategoryType] ([Name])
 VALUES
 	('Html Element'),
@@ -34,14 +42,6 @@ VALUES
 	/*25*/('textarea', 1),
 	/*26*/('button', 1),
 	/*27*/('Phone Number', 2)
-
-INSERT INTO [AwfulInput] ([ViewName])
-VALUES
-	('AI_00001'),
-	('AI_00002'),
-	('AI_00003'),
-	('AI_00004'),
-	('AI_00005')
 
 INSERT INTO [AwfulInput_Category] ([AwfulInputID], [CategoryID])
 VALUES

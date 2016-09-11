@@ -4,25 +4,19 @@
 }
 
 <h2>Compare</h2>
-@{ 
-    ViewBag.AIName = "_AI_00001";
-}
+
 <div class="container">
     <div class="row">
-        <div class="col-xs-12 col-md-6">
-            <div class="AIContainer">
-                @Html.Partial("_AwfulInput")
+        @for (int i = 0; i < ViewBag.views.Count; i++)
+        {
+            ViewBag.AIName = ViewBag.views[i];
+
+            <div class="col-xs-12 col-md-6">
+                <div class="AIContainer">
+                    @Html.Partial("_AwfulInput")
+                </div>
+                <div id="@(ViewBag.AIName + "-output")" class="AIContainer_output" data-is-visible="false"></div>
             </div>
-            <div id="@(ViewBag.AIName + "-output")" class="AIContainer_output" data-is-visible="false"></div>
-            @{
-                ViewBag.AIName = "_AI_00002";
-            }
-        </div>
-        <div class="col-xs-12 col-md-6">
-            <div class="AIContainer">
-                @Html.Partial("_AwfulInput")
-            </div>
-            <div id="@(ViewBag.AIName + "-output")" class="AIContainer_output" data-is-visible="false"></div>
-        </div>
+        }
     </div>
 </div>

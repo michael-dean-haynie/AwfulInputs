@@ -27,7 +27,7 @@ namespace AwfulInputs.Controllers
             SqlDataReader readerDrop = cmdDrop.EndExecuteReader(resultDrop);
             sqlConn.Close();
 
-            sqlConn.Open();
+            sqlConn.Open();          
             IAsyncResult resultCreateS = cmdCreateS.BeginExecuteReader();
             SqlDataReader readerCreateS = cmdCreateS.EndExecuteReader(resultCreateS);
             sqlConn.Close();
