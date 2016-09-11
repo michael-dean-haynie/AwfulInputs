@@ -1,0 +1,49 @@
+﻿@{
+    string formID = ViewBag.AIName + "-form";
+    string inputID = ViewBag.AIName + "-input";
+    string submitID = ViewBag.AIName + "-submit";
+    string outputID = ViewBag.AIName + "-output";
+
+}
+<form id="@formID" action="#" method="get">
+    <label for="@(inputID + "1")">Phone</label><br />
+    (<input type="text" maxlength="3" id="@(inputID + "1")" name="@(inputID + "1")" />)&nbsp;
+    <input type="text" maxlength="3" id="@(inputID + "2")" name="@(inputID + "2")" />&nbsp;-
+    <input type="text" maxlength="4" id="@(inputID + "3")" name="@(inputID + "3")" />
+
+    <input type="submit" id="@submitID" class="btn btn-default" value="Submit" />
+</form>
+
+<!-- submit the form -->
+<script type="text/javascript" name="submit-@formID">
+    $(document).ready(function () {
+        $("#@formID").on("submit", function(event){
+            event.preventDefault();
+            var inputs = "";
+            for (var i = 1; i <= 3; i++) {
+                inputs += $("#@inputID" + i).val();
+            }
+            console.log(inputs);
+            $("#@outputID").attr("data-output", inputs);
+            formatOutputPhone("@outputID");
+            animateOutput("@outputID");
+        });
+    });
+</script>
+
+<style>
+    #@formID #@(inputID + 1), #@formID #@(inputID + 2)
+    {
+        width:2.5em;
+    }
+
+    #@formID #@(inputID + 3)
+    {
+        width:3em;
+    }
+</style>
+
+@*
+    ===== AI Notes =====
+    - 3 text inputs
+*@

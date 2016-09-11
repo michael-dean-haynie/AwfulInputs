@@ -5,3 +5,14 @@
 
 <h2>Browse</h2>
 
+<div class="container">
+    <div class="row">
+        @{ ViewBag.AIName = "_AI_00006"; }
+        <div class="col-xs-12 col-md-6">
+            <div class="AIContainer">
+                @Html.Partial("_AwfulInput")
+            </div>
+            <div id="@(ViewBag.AIName + "-output")" class="AIContainer_output" data-is-visible="false"></div>
+        </div>
+    </div>
+</div>
