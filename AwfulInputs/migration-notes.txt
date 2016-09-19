@@ -1,0 +1,28 @@
+MIGRATION NOTES
+
+1) Pull down the repository.
+2) Needed untracked files:
+	- /ConnectionStrings.config 
+
+
+------------------------
+ConnectionStrings.config
+------------------------
+	This is what I did (not nessesarily proper practice or whatever)
+	The connection strings are using windows auth so I didn't really need to abstract them to their own file, but I did cause yeah. So here is the file contents.
+
+
+
+	===========================START FILE CONTENTS
+	<connectionStrings>
+	  <!--<add name="DefaultConnection" connectionString="Data Source=127.0.0.1;initial Catalog=AwfulInputs;User ID=awful_inputs_app;Password=awful_inputs_app" providerName="System.Data.SqlClient" />-->
+	  <add name="MigrationConnection" connectionString="Data Source=127.0.0.1;Initial Catalog=master;Integrated Security=true" providerName="System.Data.SqlClient" />
+	  <add name="DefaultConnection" connectionString="Data Source=127.0.0.1;Initial Catalog=master;Integrated Security=true" providerName="System.Data.SqlClient" />
+	</connectionStrings>
+	===========================END FILE CONTENTS
+
+	SQL server might not be configured right if it is new. You might have to do this.
+	Open sql server configuration manager and under Sql server network configuration enable named pipes and tcp\ip
+	You may need to restart the service.
+	I had to restart my computer.
+	Then you can run the migration and it should work! (/migration)
