@@ -1,0 +1,5 @@
+notes
+
+bogo with 10 individual random fields
+buttons in the form of a dialpad
+old phone style have click and drag (rotary)
