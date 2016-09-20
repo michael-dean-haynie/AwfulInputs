@@ -1,5 +1,6 @@
 notes
 
-bogo with 10 individual random fields
+have to stop the bogos from being editable
+3 drop downs
 buttons in the form of a dialpad
 old phone style have click and drag (rotary)

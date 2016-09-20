@@ -292,6 +292,7 @@
     <Content Include="Views\Migration\Index.cshtml" />
     <Content Include="Views\Shared\AwfulInputs\_AI_00006.cshtml" />
     <Content Include="Views\Shared\AwfulInputs\_AI_00007.cshtml" />
+    <Content Include="Views\Shared\AwfulInputs\_AI_00008.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
